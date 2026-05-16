@@ -22,6 +22,13 @@ def test_multiplicacao(calc):
 def test_divisao_comum(calc):
     assert calc.divisao(10, 2) == 5
 
+def test_potenciacao():
+    calc = Calculadora()
+
+    assert calc.potenciacao(2, 3) == 8
+    assert calc.potenciacao(5, 0) == 1
+    assert calc.potenciacao(4, 0.5) == 2.0
+
 
 def test_varias_operacoes(calc):
     resultado = calc.soma(10.5, 4.5)
@@ -37,3 +44,4 @@ def test_divisao_por_zero(calc):
     with pytest.raises(ValueError) as excinfo:
         calc.divisao(10, 0)
     assert "O divisor não pode ser zero." in str(excinfo.value)
+
